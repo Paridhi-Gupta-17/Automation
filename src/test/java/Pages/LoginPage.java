@@ -20,22 +20,27 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    // second git learning change checking push changes on github .
-
     public void login(){
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(username));
+
         driver.findElement(username).sendKeys("tomsmith");
-        driver.findElement(password).sendKeys("wrongpassword");
+        driver.findElement(password).sendKeys("SuperSecretPassword!");
         driver.findElement(loginBtn).click();
     }
 
     public boolean success(){
 
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
         String msg =
-                driver.findElement(successMsg)
+                wait.until(ExpectedConditions.visibilityOfElementLocated(successMsg))
                         .getText();
 
         System.out.println("Flash Message = " + msg);
 
         return msg.contains("You logged into a secure area!");
     }
-    }
+}

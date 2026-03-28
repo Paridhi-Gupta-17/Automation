@@ -10,7 +10,7 @@ public class Hooks {
     @After
     public void takeScreenshot(Scenario scenario){
 
-        if(scenario.isFailed()){
+        if(scenario.isFailed() && LoginSteps.driver != null){
 
             byte[] screenshot =
                     ((TakesScreenshot) LoginSteps.driver)
