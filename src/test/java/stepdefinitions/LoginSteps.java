@@ -16,7 +16,7 @@ public class LoginSteps {
     @Given("user opens login page")
     public void openPage(){
 
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().browserVersion("146").setup();
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless=new");
