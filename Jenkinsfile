@@ -15,3 +15,10 @@ pipeline {
         }
     }
 }
+
+    post {
+        always {
+            testNG()
+        }
+    }
+}
