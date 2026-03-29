@@ -16,9 +16,9 @@ pipeline {
     }
 }
 
-   post {
+    post {
         always {
-            step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
+            archiveArtifacts artifacts: '**/target/surefire-reports/**', fingerprint: true
+            archiveArtifacts artifacts: '**/test-output/**', fingerprint: true
         }
     }
-}
