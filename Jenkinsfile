@@ -1,7 +1,7 @@
 node {
 
     stage('Checkout Code') {
-        git branch: 'main', url: 'YOUR_GITHUB_REPO_URL'
+        git branch: 'main', url: 'https://github.com/Paridhi-Gupta-17/Automation'
     }
 
     stage('Run Automation Tests') {
