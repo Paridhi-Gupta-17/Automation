@@ -1,7 +1,7 @@
 node {
 
     stage('Checkout Code') {
-        git branch: 'main', url: 'https://github.com/Paridhi-Gupta-17/Automation'
+        git branch: 'main', url: 'YOUR_GITHUB_REPO_URL'
     }
 
     stage('Run Automation Tests') {
@@ -10,6 +10,5 @@ node {
 
     stage('Archive Reports') {
         archiveArtifacts artifacts: '**/target/surefire-reports/**', fingerprint: true
-        archiveArtifacts artifacts: '**/test-output/**', fingerprint: true
     }
 }
